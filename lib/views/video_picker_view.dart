@@ -2,11 +2,11 @@
 
 import 'dart:io';
 
-import 'package:auto_caller/hive/video_box.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:path/path.dart' as p;
 import 'package:permission_handler/permission_handler.dart';
+import 'package:third_party_integration/hive/video_box.dart';
 import 'package:video_player/video_player.dart';
 class VideoPickerView extends StatefulWidget {
   const VideoPickerView({Key? key}) : super(key: key);

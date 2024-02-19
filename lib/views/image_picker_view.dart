@@ -2,11 +2,11 @@
 
 import 'dart:io';
 
-import 'package:auto_caller/views/home_view.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:path/path.dart' as p;
 import 'package:permission_handler/permission_handler.dart';
+import 'package:third_party_integration/hive/image_box.dart';
 
 class ImagePickerView extends StatefulWidget {
   const ImagePickerView({Key? key}) : super(key: key);
