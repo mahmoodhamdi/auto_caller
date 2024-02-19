@@ -87,6 +87,11 @@
 		<array>
 			<string>voip</string>
 		</array>
+		<key>LSApplicationQueriesSchemes</key>
+		<array>
+			<string>sms</string>
+			<string>tel</string>
+		</array>
 
 		<!-- Add other permissions as needed -->
 

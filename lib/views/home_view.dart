@@ -2,11 +2,18 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:hive/hive.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:permission_handler/permission_handler.dart';
 
-class HomeView extends StatelessWidget {
+class HomeView extends StatefulWidget {
   const HomeView({super.key});
+
+  @override
+  State<HomeView> createState() => _HomeViewState();
+}
+
+class _HomeViewState extends State<HomeView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,22 +30,41 @@ class HomeView extends StatelessWidget {
               print(status);
 
               if (status.isDenied) {
-              await Permission.photos.request();
+                await Permission.photos.request();
                 print(status);
               }
               if (status.isPermanentlyDenied) {
                 showAlertDialog(context);
               }
+              if (status.isGranted) {
+                await pickUserImage(context);
+              }
             },
-            child: const Text('Call'),
-          )
+            child: const Text('Pick Image'),
+          ),
+          ElevatedButton(
+            onPressed: () {
+              pickUserVideo(context);
+            },
+            child: const Text('Pick Video'),
+          ),
         ],
       ),
     );
   }
 }
 
-Future<void> getLostData(BuildContext context) async {
+Future<void> pickUserVideo(BuildContext context) async {
+  XFile? video = await ImagePicker().pickVideo(
+    source: ImageSource.gallery,    
+  );
+  if (video != null) {
+    print(video.path);
+  }
+
+}
+
+Future<void> pickUserImage(BuildContext context) async {
   XFile? image = await ImagePicker().pickImage(
     source: ImageSource.gallery,
     maxHeight: 500,
@@ -46,6 +72,9 @@ Future<void> getLostData(BuildContext context) async {
     imageQuality: 90,
     requestFullMetadata: true,
   );
+  if (image != null) {
+    print(image.path);
+  }
 }
 
 showAlertDialog(context) => showCupertinoDialog<void>(
@@ -93,3 +122,11 @@ void showConfirmationDialog(
     },
   );
 }
+class ImageBox {
+  static const String _boxName = 'images';
+
+  static Future<Box> openBox() async {
+    return await Hive.openBox(_boxName);
+  }
+}
+
