@@ -11,7 +11,7 @@ My Flutter App is a sample project showcasing how to use various third-party int
 - **Video Picker:** Select video files from the device gallery and view them using the Video Player plugin.
 - **Image Picker:** Choose images from the device gallery and display them.
 - **Local Storage:** Store images, videos, and different types of files in the phone's local storage.
-- **More is coming... 
+- **More is coming:**... 
 
 
 ## Feedback
