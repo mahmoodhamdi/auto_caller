@@ -13,13 +13,6 @@ My Flutter App is a sample project showcasing how to use various third-party int
 - **Local Storage:** Store images, videos, and different types of files in the phone's local storage.
 - **More is coming... 
 
-## Third-Party Integrations
-
-- [File Picker](https://pub.dev/packages/file_picker): Used to pick files from the device storage.
-- [Audio Player](https://pub.dev/packages/audioplayers): Used to play audio files.
-- [Video Player](https://pub.dev/packages/video_player): Used to play video files.
-- [Firebase Authentication](https://pub.dev/packages/firebase_auth): Used for user authentication.
-- [Cloud Firestore](https://pub.dev/packages/cloud_firestore): Used as a backend database for storing data.
 
 ## Feedback
 
