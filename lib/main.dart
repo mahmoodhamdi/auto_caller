@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:third_party_integration/models/contact_model.dart';
-import 'package:third_party_integration/views/contact_picker_view.dart';
+import 'package:third_party_integration/views/automated_call_view.dart';
 
 void main() async {
   // Initialize Hive
@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Third Party Integration',
-      home: ContactPickerView(),
+      home: AutomatedCallView(),
     );
   }
 }

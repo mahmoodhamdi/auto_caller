@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:third_party_integration/hive/contacts_box.dart';
 import 'package:third_party_integration/models/contact_model.dart';
+import 'package:third_party_integration/views/contacts_list_view.dart';
 
 class ContactPickerView extends StatefulWidget {
   const ContactPickerView({Key? key}) : super(key: key);
@@ -156,48 +157,5 @@ class _ContactPickerViewState extends State<ContactPickerView> {
 //
   Future<void> _pickMultipleContacts() async {
     // TODO: implement _pickMultipleContacts
-  }
-}
-
-class ContactListView extends StatelessWidget {
-  const ContactListView({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return FutureBuilder<List<ContactModel>>(
-      future: _getSavedContacts(),
-      builder: (context, snapshot) {
-        if (snapshot.connectionState == ConnectionState.waiting) {
-          return const CircularProgressIndicator(); // Show loading indicator while contacts are being fetched
-        } else if (snapshot.hasError) {
-          return Text('Error: ${snapshot.error}');
-        } else {
-          final contactModels = snapshot.data!;
-          contactModels.sort(
-              (a, b) => a.name.compareTo(b.name)); // Sort contacts by name
-          return Scaffold(
-            appBar: AppBar(
-              title: const Text('Selected Contacts'),
-            ),
-            body: ListView.builder(
-              itemCount: contactModels.length,
-              itemBuilder: (context, index) {
-                final contact = contactModels[index];
-                return ListTile(
-                  title: Text(contact.name),
-                  subtitle: Text(contact.phoneNumber),
-                );
-              },
-            ),
-          );
-        }
-      },
-    );
-  }
-
-  Future<List<ContactModel>> _getSavedContacts() async {
-    final box = await ContactsBox.openBox();
-    final contacts = box.values.cast<ContactModel>().toList();
-    return contacts;
   }
 }
