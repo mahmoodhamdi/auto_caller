@@ -91,6 +91,10 @@
 
     <!-- Permissions options for the `notification` group -->
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <!-- Permissions options for the ` ignore battery optimizations` group -->
+    <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS" />
+    <!-- Permissions options for the `request notification policy` group -->
+    <uses-permission android:name="android.permission.REQUEST_NOTIFICATION_POLICY" />
 
     <!-- Permissions options for the `alarm` group -->
     <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
