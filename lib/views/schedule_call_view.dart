@@ -38,46 +38,46 @@ class _ScheduleCallsViewState extends State<ScheduleCallsView> {
     if (status.isPermanentlyDenied) {
       openAppSettings();
     }
-    var backgroundStatus = await Permission.activityRecognition.request();
-    if (backgroundStatus.isDenied) {
-      await Permission.activityRecognition.request();
-    }
-    if (backgroundStatus.isPermanentlyDenied) {
-      openAppSettings();
-    }
-    var locationStatus = await Permission.location.request();
-    if (locationStatus.isDenied) {
-      await Permission.location.request();
-    }
-    if (locationStatus.isPermanentlyDenied) {
-      openAppSettings();
-    }
-    var alarmStatus = await Permission.criticalAlerts.request();
-    if (alarmStatus.isDenied) {
-      await Permission.criticalAlerts.request();
-    }
-    if (alarmStatus.isPermanentlyDenied) {
-      openAppSettings();
-    }
-    var ignoreBatteryOptimizationStatus =
-        await Permission.ignoreBatteryOptimizations.request();
-    if (ignoreBatteryOptimizationStatus.isDenied) {
-      await Permission.ignoreBatteryOptimizations.request();
-    }
-    if (ignoreBatteryOptimizationStatus.isPermanentlyDenied) {
-      openAppSettings();
-    }
+    // var backgroundStatus = await Permission.activityRecognition.request();
+    // if (backgroundStatus.isDenied) {
+    //   await Permission.activityRecognition.request();
+    // }
+    // if (backgroundStatus.isPermanentlyDenied) {
+    //   openAppSettings();
+    // }
+    // var locationStatus = await Permission.location.request();
+    // if (locationStatus.isDenied) {
+    //   await Permission.location.request();
+    // }
+    // if (locationStatus.isPermanentlyDenied) {
+    //   openAppSettings();
+    // }
+    // var alarmStatus = await Permission.criticalAlerts.request();
+    // if (alarmStatus.isDenied) {
+    //   await Permission.criticalAlerts.request();
+    // }
+    // if (alarmStatus.isPermanentlyDenied) {
+    //   openAppSettings();
+    // }
+    // var ignoreBatteryOptimizationStatus =
+    //     await Permission.ignoreBatteryOptimizations.request();
+    // if (ignoreBatteryOptimizationStatus.isDenied) {
+    //   await Permission.ignoreBatteryOptimizations.request();
+    // }
+    // if (ignoreBatteryOptimizationStatus.isPermanentlyDenied) {
+    //   openAppSettings();
+    // }
 
 
 
-    var callStatus = await Permission.phone.request();
+    // var callStatus = await Permission.phone.request();
 
-    if (callStatus.isDenied) {
-      await Permission.phone.request();
-    }
-    if (callStatus.isPermanentlyDenied) {
-      openAppSettings();
-    }
+    // if (callStatus.isDenied) {
+    //   await Permission.phone.request();
+    // }
+    // if (callStatus.isPermanentlyDenied) {
+    //   openAppSettings();
+    // }
     // Schedule the call
     final String phoneNumber = _phoneNumberController.text;
     if (phoneNumber.isEmpty) {
