@@ -1,4 +1,4 @@
-# Third-Party Integration
+# Third-Party Integration [![wakatime](https://wakatime.com/badge/user/018c9017-daf8-45c1-be71-8b16fd238022/project/018dc391-e411-4faa-aac9-71aaa417a3f0.svg)](https://wakatime.com/badge/user/018c9017-daf8-45c1-be71-8b16fd238022/project/018dc391-e411-4faa-aac9-71aaa417a3f0)
 
 ## Overview
 
